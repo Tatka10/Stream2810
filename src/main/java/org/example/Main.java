@@ -6,7 +6,6 @@ import java.util.stream.Stream;
 
 public class Main {
     public static void main(String[] args) {
-        Integer[] arr = {1, 4, 5, 6, 7, 8, 9, 4, 5, 4, 3, 7};
         //ArrayList<Integer> list1 = new ArrayList<>(Arrays.asList(arr));
         //System.out.println(list1);
         //Stream<Integer> stream = list1.stream();
@@ -24,10 +23,12 @@ public class Main {
         //Упр.1. Создать ArrayList с числами. Отфильтровать только четные числа
         // потом возвести их вквадрат, потом оставить только первые три элемента
         // и вывести в консоль.
+        Integer[] arr = {1, 4, 5, 6, 7};
+        ArrayList<Integer> arr1 = new ArrayList<>(Arrays.asList(arr));
         Integer[] in = {1, 4, 3, 100, 34, 16, 6, 8};
         String[] mass = {"Who", "you", "are", "Bring", "me", "Popcorn", "Cocacola"};
-        System.out.println(metod(mass));
-        System.out.println(metod1(in));
+       // System.out.println(metod(mass));
+        System.out.println(metod2(arr1));
 
         //ArrayList<Integer> ar = new ArrayList<>(Arrays.asList(in));
         //Stream<Integer> str = ar.stream();
@@ -49,10 +50,20 @@ public class Main {
     // сколько в массиве чисел, больше заданного значения (например > 5). Покрыть тестами.
     public static int metod1(Integer[] in) {
         Stream<Integer> str2 = Arrays.stream(in);
-        long count = str2.filter(x->x>5).count();
+        long count = str2.filter(x -> x > 5).count();
 
         return (int) count;
     }
 
+    //Упр.4. Создать метод, который принимает ArrayList с числами,
+    // создает stream и подсчитывает суммувсех чисел(метод reduce),
+    // результат возвращает. Покрыть тестами.
+    public static int metod2(ArrayList<Integer> arr) {
+        Stream<Integer> str = arr.stream();
+        int sum = str.reduce(0, (a, x) -> a + x);
+
+
+        return sum;
+    }
 }
 
