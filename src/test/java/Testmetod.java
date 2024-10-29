@@ -18,7 +18,11 @@ public class Testmetod {
         String[] mass = {};
         Assertions.assertEquals(0, metod(mass));
     }
-
+    @Test
+    public void test8(){
+        String [] mass = {null,null};
+        Assertions.assertEquals(0,metod(mass));
+    }
     @Test
     public void test3() {
         String[] mass = {"Thre"};
@@ -51,7 +55,7 @@ public class Testmetod {
         Assertions.assertEquals(1, metod1(arr));
     }
     @Test
-    public void test8(){
+    public void test14(){
         ArrayList<Integer>arr= new ArrayList<>();
         Assertions.assertEquals(0,metod2(arr));
     }

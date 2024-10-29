@@ -38,9 +38,10 @@ public class Main {
     }
 
     public static int metod(String[] mass) {
+        Stream <String> str2 = Arrays.stream(mass); // вызов стрима их массива!!!
         ArrayList<String> arr1 = new ArrayList<>(Arrays.asList(mass));
         Stream<String> str1 = arr1.stream();
-        long b = str1.filter(x -> x.length() > 4).count();
+        long b = str2.filter(x ->x!=null && x.length() > 4).count();
 
 
         return (int) b;
